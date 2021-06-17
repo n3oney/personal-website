@@ -34,6 +34,15 @@ module.exports = {
       },
       fontFamily: {
         'sans': 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'
+      },
+      boxShadow: {
+          light: '0 0 10px 2px #333333B2'
+      },
+      width: {
+        'half-screen': '50vw'
+      },
+      height: {
+        'half-screen': '50vh'
       }
     },
   },
