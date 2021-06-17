@@ -1,18 +1,18 @@
 # n3oney/personal-website
-This is a [Next.js](https://nextjs.org/) project using Yarn 2 for package management.
+This is a [Next.js](https://nextjs.org/) project.
 
 ## Getting Started
 
 First, install the dependencies:
 
 ```bash
-yarn
+npm install
 ```
 
 Then, start the development server:
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -26,5 +26,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 To contribute:
 - Create a new branch called `patch-{patch-number}` and check it out
 - Do your coding
-- Run `yarn commit` to commit
+- Run `npm run commit` to commit
 - Create a pull request
