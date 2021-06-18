@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, Suspense } from 'react';
 import * as THREE from 'three';
 import { Canvas, useFrame } from '@react-three/fiber';
 import useMousePosition from '../hooks/useMousePosition';
@@ -24,7 +24,9 @@ const AnimationController: React.FC = () => {
             <Canvas style={{width: '100%', height: '100%'}} camera={{ position: [0, 0, -10], fov: 60 }}>
                 <ambientLight intensity={1} />
                 <pointLight position={[10, 10, 10]} />
-                <Logo />
+                <Suspense fallback={null}>
+                  <Logo />
+                </Suspense>
             </Canvas>
         </div>
     );
