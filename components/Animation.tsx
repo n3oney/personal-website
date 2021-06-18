@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { Canvas, useFrame } from '@react-three/fiber';
 import useMousePosition from '../hooks/useMousePosition';
 import { Vector3 } from 'three';
-import Neoney from './Neoney';
+import Neoney from './NeoneyGLTF';
 
 const Box = () => {
     const pos = useMousePosition(true);
