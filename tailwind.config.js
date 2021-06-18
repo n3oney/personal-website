@@ -5,6 +5,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        discord: '#5865F2',
+        twitter: '#1DA1F2',
+        github: '#bd2c00',
         pink: {
           '1': '#FF5ADB',
           '2': '#FF86E4'

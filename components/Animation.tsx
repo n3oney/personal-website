@@ -1,15 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useRef, Suspense } from 'react';
 import * as THREE from 'three';
 import { Canvas, useFrame } from '@react-three/fiber';
 import useMousePosition from '../hooks/useMousePosition';
 import { Vector3 } from 'three';
-import Neoney from './Neoney';
+import Neoney from './NeoneyGLTF';
 
-const Box = () => {
+const Logo = () => {
     const pos = useMousePosition(true);
     const mesh = useRef<THREE.Mesh>(null!);
 
-    useFrame(() => { mesh.current.rotateOnWorldAxis(new Vector3(0, 1, 0), (pos.x - 0.5) * 0.1); mesh.current.rotateOnWorldAxis(new Vector3(-1, 0, 0), (pos.y - 0.5) * 0.1) });
+    useFrame(() => { mesh.current.rotateOnWorldAxis(new Vector3(0, 1, 0), (pos.x - 0.5) * 0.04); mesh.current.rotateOnWorldAxis(new Vector3(-1, 0, 0), (pos.y - 0.5) * 0.04) });
 
     return (
         <mesh ref={mesh} position={[0, 0, 0]}>
@@ -24,7 +24,9 @@ const AnimationController: React.FC = () => {
             <Canvas style={{width: '100%', height: '100%'}} camera={{ position: [0, 0, -10], fov: 60 }}>
                 <ambientLight intensity={1} />
                 <pointLight position={[10, 10, 10]} />
-                <Box />
+                <Suspense fallback={null}>
+                  <Logo />
+                </Suspense>
             </Canvas>
         </div>
     );
