@@ -1,11 +1,12 @@
 import * as React from "react";
 
-const NeoneySVG: React.FC = (props) => (
+const NeoneySVG: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
-    width={2048}
-    height={2048}
+    viewBox="0 0 2048 2048"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
     {...props}
   >
     <path
