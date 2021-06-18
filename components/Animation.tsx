@@ -5,7 +5,7 @@ import useMousePosition from '../hooks/useMousePosition';
 import { Vector3 } from 'three';
 import Neoney from './NeoneyGLTF';
 
-const Box = () => {
+const Logo = () => {
     const pos = useMousePosition(true);
     const mesh = useRef<THREE.Mesh>(null!);
 
@@ -24,7 +24,7 @@ const AnimationController: React.FC = () => {
             <Canvas style={{width: '100%', height: '100%'}} camera={{ position: [0, 0, -10], fov: 60 }}>
                 <ambientLight intensity={1} />
                 <pointLight position={[10, 10, 10]} />
-                <Box />
+                <Logo />
             </Canvas>
         </div>
     );
