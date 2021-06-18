@@ -9,7 +9,7 @@ const Box = () => {
     const pos = useMousePosition(true);
     const mesh = useRef<THREE.Mesh>(null!);
 
-    useFrame(() => { mesh.current.rotateOnWorldAxis(new Vector3(0, 1, 0), (pos.x - 0.5) * 0.1); mesh.current.rotateOnWorldAxis(new Vector3(-1, 0, 0), (pos.y - 0.5) * 0.1) });
+    useFrame(() => { mesh.current.rotateOnWorldAxis(new Vector3(0, 1, 0), (pos.x - 0.5) * 0.04); mesh.current.rotateOnWorldAxis(new Vector3(-1, 0, 0), (pos.y - 0.5) * 0.04) });
 
     return (
         <mesh ref={mesh} position={[0, 0, 0]}>
