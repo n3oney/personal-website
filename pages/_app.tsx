@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return <>
     <Head>
       <title>neoney.me</title>
+      <link rel="shortcut icon" href="/favicon.ico" />
     </Head>
     <Navbar />
     <Component {...pageProps} />
