@@ -11,12 +11,12 @@ export default function Home() {
         <div className="grid grid-cols-2 mt-8 gap-x-2.5 place-items-stretch">
           <Link href="/projects">
             <a
-              className="bg-pink-1 text-gray-6 rounded-md px-3 py-2 text-sm shadow-light flex items-center justify-center">
+              className="bg-pink-1 text-black rounded-md px-3 py-2 text-sm shadow-light flex items-center justify-center">
               Check my projects out <span className="ml-2 whitespace-nowrap">-&gt;</span>
             </a>
           </Link>
           <a href={`https://nexe.${process.env.NEXT_PUBLIC_BASE_DOMAIN}/`}
-             className="bg-pink-1 text-gray-6 rounded-md px-3 py-2 text-sm shadow-light flex items-center justify-center">
+            className="bg-pink-1 text-black rounded-md px-3 py-2 text-sm shadow-light flex items-center justify-center">
             Nexe <span className="ml-2 whitespace-nowrap">-&gt;</span>
           </a>
         </div>
