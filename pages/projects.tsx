@@ -30,10 +30,8 @@ const Projects: React.FC = () => {
   ]
 
   return (
-    <div className="flex h-full justify-center p-4 pt-32 items-center">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-content-center">
-        {projects.map((p, i) => <Project key={i} {...p} />)}
-      </div>
+    <div className="m-4 mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-content-center">
+      {projects.map((p, i) => <Project key={i} {...p} />)}
     </div>
   );
 }
