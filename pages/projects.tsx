@@ -1,5 +1,5 @@
-import React from "react";
-import Project, { ProjectProps } from "../components/Project";
+import React from 'react';
+import Project, { ProjectProps } from '../components/Project';
 import PersonalWebsite from '../public/personal-website.png';
 import DiscordFormatter from '../public/discord-formatter.png';
 import DiscordTemplate from '../public/discord-template.png';
@@ -30,7 +30,7 @@ const Projects: React.FC = () => {
   ]
 
   return (
-    <div className="m-4 mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-content-center">
+    <div className='m-4 mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-content-center'>
       {projects.map((p, i) => <Project key={i} {...p} />)}
     </div>
   );

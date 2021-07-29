@@ -20,7 +20,7 @@ const Logo = () => {
 
 const AnimationController: React.FC = () => {
     return (
-        <div className="flex-grow lg:flex-grow-0 lg:w-1/2 lg:h-full h-1/2">
+        <div className='flex-grow lg:flex-grow-0 lg:w-1/2 lg:h-full h-1/2'>
             <Canvas style={{width: '100%', height: '100%'}} camera={{ position: [0, 0, -10], fov: 60 }}>
                 <ambientLight intensity={1} />
                 <pointLight position={[10, 10, 10]} />
