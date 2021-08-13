@@ -17,7 +17,7 @@ const Navbar: React.FC = () => (
       <a href="https://discord.gg/wmRTMRQ6mX" className="mx-2">
         <RiDiscordLine className="transition hover:text-discord" />
       </a>
-      <a href="https://twitter.com/n_xn_y" className="mr-3">
+      <a href="https://twitter.com/n3oney" className="mr-3">
         <RiTwitterLine className="transition hover:text-twitter" />
       </a>
     </div>
