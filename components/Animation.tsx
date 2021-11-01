@@ -20,7 +20,7 @@ const Logo = ({ rotation }: { rotation: [number, number, number] }) => {
 const AnimationController: React.FC = () => {
   const ref = useRef<HTMLCanvasElement>(null);
   const pos = useMousePosition(true);
-  const rect = useBoundingclientrect(ref);
+  const rect = useBoundingclientrect(ref) as DOMRect | undefined;
   const logoCenter = useMemo(
     () => ({
       x:
