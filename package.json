@@ -16,10 +16,13 @@
   "dependencies": {
     "@react-three/drei": "^6.2.0",
     "@react-three/fiber": "^7.0.1",
-    "next": "11",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "framer-motion": "^5.0.1",
+    "next": "^12.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
+    "rooks": "^5.7.3",
+    "tailwind-merge": "^0.8.1",
     "three": "^0.129.0"
   },
   "devDependencies": {
