@@ -1,15 +1,20 @@
-import React, { useRef, Suspense, useMemo, useEffect } from 'react';
+import React, { useRef, Suspense, useMemo, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { Canvas, useFrame } from '@react-three/fiber';
 import useMousePosition from '../hooks/useMousePosition';
-import { Vector3 } from 'three';
 import Neoney from './NeoneyGLTF';
-import { useBoundingclientrect, useWindowSize } from 'rooks';
-import { useMotionValue, useTransform } from 'framer-motion';
+import { useBoundingclientrect } from 'rooks';
+import { MotionValue, useSpring, useTransform } from 'framer-motion';
 
 const degToRad = (deg: number) => (deg * Math.PI) / 180;
 
-const Logo = ({ rotation }: { rotation: [number, number, number] }) => {
+const Logo = ({ transformedX, transformedY }: { transformedX: MotionValue<number>, transformedY: MotionValue<number> }) => {
+  const [rotation, setRotation] = useState<[number, number, number]>([1.57079633, 0, 0]);
+
+  useFrame(() => {
+    setRotation([1.57079633 + transformedY.get(), 0, transformedX.get()]);
+  });
+
   return (
     <mesh position={[0, 0, 0]} rotation={rotation}>
       <Neoney position={[0, 0, 0]} />
@@ -33,8 +38,16 @@ const AnimationController: React.FC = () => {
     [rect]
   );
 
-  const valueX = useMotionValue(pos.x - logoCenter.x);
-  const valueY = useMotionValue(pos.y - logoCenter.y);
+  const valueX = useSpring(pos.x - logoCenter.x, {
+    mass: 0.1,
+    damping: 10,
+    bounce: 0,
+  });
+  const valueY = useSpring(pos.y - logoCenter.y, {
+    mass: 0.1,
+    damping: 10,
+    bounce: 0,
+  });
 
   useEffect(() => {
     valueX.set(pos.x - logoCenter.x);
@@ -44,8 +57,8 @@ const AnimationController: React.FC = () => {
     valueY.set(pos.y - logoCenter.y);
   }, [pos, logoCenter, valueY]);
 
-  const transformedX = useTransform(valueX, [-logoCenter.x, 0, 1 - logoCenter.x], [1.5, 0, -1.5]);
-  const transformedY = useTransform(valueY, [-logoCenter.y, 0, 1 - logoCenter.y], [1.5, 0, -1.5]);
+  const transformedX = useTransform(valueX, [-logoCenter.x, 0, 1 - logoCenter.x], [1.57079633, 0, -1.57079633]);
+  const transformedY = useTransform(valueY, [-logoCenter.y, 0, 1 - logoCenter.y], [1.57079633, 0, -1.57079633]);
 
   return (
     <div className='flex-grow lg:flex-grow-0 lg:w-1/2 lg:h-full h-1/2'>
@@ -58,11 +71,8 @@ const AnimationController: React.FC = () => {
         <pointLight position={[10, 10, 10]} />
         <Suspense fallback={null}>
           <Logo
-            rotation={[
-              transformedY.get() + degToRad(90),
-              0,
-              transformedX.get()
-            ]}
+            transformedX={transformedX}
+            transformedY={transformedY}
           />
         </Suspense>
       </Canvas>
