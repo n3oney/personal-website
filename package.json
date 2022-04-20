@@ -30,18 +30,11 @@
     "@types/react": "17.0.11",
     "@types/three": "^0.129.1",
     "autoprefixer": "latest",
-    "commitizen": "^4.2.4",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "7.28.0",
     "eslint-config-next": "11.0.0",
     "next-transpile-modules": "^8.0.0",
     "postcss": "latest",
     "tailwindcss": "latest",
     "typescript": "4.3.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
   }
 }
